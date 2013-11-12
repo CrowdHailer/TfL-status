@@ -1,0 +1,51 @@
+{
+    "bakerloo": {
+        "name": "Bakerloo",
+        "status": "Good Service",
+        "info": "Extra string of information",
+        "cssName": "bakerloo",
+        "cssStatus": "Good"
+    },
+    "central": {
+        "name": "Bakerloo",
+        "status": "Good Service",
+        "info": "Extra string of information",
+        "cssName": "bakerloo",
+        "cssStatus": "Good"
+    },
+    "district": {
+        "name": "Bakerloo",
+        "status": "Good Service",
+        "info": "Extra string of information",
+        "cssName": "bakerloo",
+        "cssStatus": "Good"
+    },
+    "hammersmith": {
+        "name": "Bakerloo",
+        "status": "Good Service",
+        "info": "Extra string of information",
+        "cssName": "bakerloo",
+        "cssStatus": "Good"
+    },
+    "jubilee": {
+        "name": "Bakerloo",
+        "status": "Good Service",
+        "info": "Extra string of information",
+        "cssName": "bakerloo",
+        "cssStatus": "Good"
+    },
+    "metropolitan": {
+        "name": "Bakerloo",
+        "status": "Good Service",
+        "info": "Extra string of information",
+        "cssName": "bakerloo",
+        "cssStatus": "Good"
+    },
+    "northern": {
+        "name": "Bakerloo",
+        "status": "Good Service",
+        "info": "Extra string of information",
+        "cssName": "bakerloo",
+        "cssStatus": "Good"
+    }
+}

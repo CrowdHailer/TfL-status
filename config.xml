@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "uk.co.londonlayout.tflstatus"
+        versionCode="0" 
+        version   = "0.1.0">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>London Layout Live Status</name>
+
+    <description>
+        App to deliver live operating data on Transport for London Lines and Stations 
+    </description>
+
+    <author href="https://londonlayout.co.uk" email="petersaxton@londonlayout.co.uk">
+        Peter Saxton
+    </author>
+	
+	<icon src="icon.png" />
+	
+	<access origin="https://londonlayout.co.uk" subdomains="true" />
+
+</widget>
