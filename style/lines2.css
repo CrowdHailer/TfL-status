@@ -1,7 +1,7 @@
 div.accordian-header, div.accordian-content{
 	background-repeat: no-repeat;
-	background-position: bottom center;
-	background-size: 100%;
+	background-position: bottom left;
+	background-size: 65%;
 }
 div.bakerloo {
 	background-image:url('lines/bakerloo.png');

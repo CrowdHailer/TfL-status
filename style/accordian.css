@@ -5,6 +5,7 @@
 
 .accordian-container label {
 	cursor: pointer;
+	display: block;
 }
 .accordian-container input {
 	display: none;

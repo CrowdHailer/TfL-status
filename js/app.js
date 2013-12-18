@@ -3,19 +3,22 @@ var lineStatus = {
     {
       "class": "bakerloo",
       "name": "Bakerloo",
-      "status": "Unknown",
+      "status": "Good Service",
+	  "serviceClass": "good",
       "details": "No more information available"
     },
     {
       "class": "central",
       "name": "Central",
       "status": "Unknown",
+	  "serviceClass": "unknow",
       "details": "No more information available"
     },
     {
       "class": "circle",
       "name": "Circle",
-      "status": "Unknown",
+      "status": "Minor Delays",
+	  "serviceClass": "minor",
       "details": "No more information available"
     },
     {
@@ -33,7 +36,8 @@ var lineStatus = {
     {
       "class": "jubilee",
       "name": "Jubilee",
-      "status": "Unknown",
+      "status": "Severe Delays",
+	  "serviceClass": "major",
       "details": "No more information available"
     },
     {
