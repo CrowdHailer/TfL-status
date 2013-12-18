@@ -151,13 +151,20 @@ var lineStatus = {
   ]
 };
 var myApp = {
+	MASTER_DATA: {},
+	TEMPLATE: '',
+	LIVE_ELEMENT: '',
 	init: function (data, templateElement, outputArea) {
-		var template = document.getElementById(templateElement).innerHTML;
-		var output = Mustache.render(template,data);
-		document.getElementById(outputArea).innerHTML = output;
-		this.template = template;
-		this.data = data
+		this.MASTER_DATA = data;
+		this.TEMPLATE = document.getElementById(templateElement).innerHTML;
+		this.LIVE_ELEMENT = document.getElementById(outputArea);
+		
 		this.getLineStatus();
+		//console.log(this.TEMPLATE);
+		var output = Mustache.render(this.TEMPLATE,this.MASTER_DATA );
+		//console.log(this.TEMPLATE);
+		this.updateOutputArea(output);
+		//console.log(this.TEMPLATE);
 		
 	},
 	getStationIncidents: function(){},
@@ -177,13 +184,14 @@ var myApp = {
 			});
 			//console.log(output);
 			myApp.updateLineStatus(output);
-			var output = Mustache.render(myApp.template,window.lineStatus);
-			document.getElementById('line-status-container').innerHTML = output;
+			console.log(this.MASTER_DATA);
+			var liveContent = Mustache.render(this.TEMPLATE,this.MASTER_DATA );
+			myApp.updateOutputArea(liveContent);
 		});
 	},
 	updateLineStatus: function (data) {
 		console.log(window.lineStatus);
-		var lineStatus = window.lineStatus['lines'];
+		var lineStatus = this.MASTER_DATA['lines'];
 		var i = lineStatus.length-1;
 		if (i > -1) {
 			do {
@@ -197,6 +205,11 @@ var myApp = {
 				}
 			} while (--i >= 0);
 		}
+		console.log(lineStatus);
+		this.MASTER_DATA['lines'] = lineStatus;
+	},
+	updateOutputArea: function (content) {
+		this.LIVE_ELEMENT.innerHTML = content;
 	}
 	
 };
