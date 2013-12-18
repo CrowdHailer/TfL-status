@@ -1,0 +1,23 @@
+/*body{
+	width: 30%;
+	font-family: Tahoma, Geneva, sans-serif;
+}*/
+
+.accordian-container label {
+	cursor: pointer;
+}
+.accordian-container input {
+	display: none;
+}
+.accordian-content {
+	max-height: 0px;
+	overflow: hidden;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.accordian-container label input:checked ~ .accordian-content {
+	max-height: 100px;
+}

@@ -2,110 +2,23 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="js/updates.js"></script>
+	<title>London Layout Live information</title>
+	<link rel="stylesheet" href="style/accordian.css">
 </head>
 <body>
-	
-	<div id="main-content">
-		<div>
-			<table>
-				<tr>
-					<td>Bakerloo</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Central</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Circle</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>District</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Hammersmith & City</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Jubilee</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Metropolitan</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Northern</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Piccadilly</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Victoria</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>Waterloo & City</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>DLR</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-				<tr>
-					<td>London Overground</td>
-					<td>Unknown</td>
-				</tr>
-				<tr class="hidden">
-					<td colspan="2">No Further Information</td>
-				</tr>
-			</table>
-		</div>
-		
-	</div>
+	<header id="line-status-header"></header>
+	<section id="line-status-container" class="accordian-container">
+		<script id="line-status-template" type="text/template">
+			{{#lines}}
+				<label>
+					<input type="radio" name="line-status">
+					<div class="accordian-header">{{name}}</div>
+					<div class="accordian-content">{{details}}</div>
+				</label>
+			{{/lines}}
+		</script>
+	</section>
+	<script src="js/mustache.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
