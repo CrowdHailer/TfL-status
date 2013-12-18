@@ -155,6 +155,21 @@ var myApp = {
 		var template = document.getElementById(templateElement).innerHTML;
 		var output = Mustache.render(template,data);
 		document.getElementById(outputArea).innerHTML = output;
+		this.getLineStatus();
+	},
+	getStationIncidents: function(){},
+	getLineStatus: function () {
+		$.get('retrieve/underground.php', function (liveLineStatus) {
+			console.log(liveLineStatus);
+			$(liveLineStatus).find('LineStatus').each(function () {
+				
+				$line = $(this);
+				var name = $($line.children('Line')[0]).attr('Name');
+				var status = $($line.children('Status')[0]).attr('Description');
+				/*var name = $line.attr('Name')*/
+				console.log(name, status);
+			});
+		});
 	},
 	
 };
