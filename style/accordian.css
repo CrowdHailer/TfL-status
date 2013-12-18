@@ -20,4 +20,5 @@
 }
 .accordian-container label input:checked ~ .accordian-content {
 	max-height: 100px;
+	padding-bottom: 0.3rem;
 }

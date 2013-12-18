@@ -1,0 +1,28 @@
+body{
+	width: 27%;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+.accordian-header {
+	padding-bottom: 0.4rem;
+	margin: 3px 0px
+}
+span.name {
+	font-size: 120%;
+
+	padding-left: 1rem;
+	width: 10rem;
+	color: #214478;
+}
+span.status {
+	float: right;
+	font-size: 120%;
+	font-style: italic;
+	padding-right: 1em;
+	width: 4em;
+	color: #AAA;
+}
+.accordian-content {
+	padding-left: 1.2rem;
+	
+	
+}
