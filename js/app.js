@@ -155,22 +155,49 @@ var myApp = {
 		var template = document.getElementById(templateElement).innerHTML;
 		var output = Mustache.render(template,data);
 		document.getElementById(outputArea).innerHTML = output;
+		this.template = template;
+		this.data = data
 		this.getLineStatus();
+		
 	},
 	getStationIncidents: function(){},
 	getLineStatus: function () {
 		$.get('retrieve/underground.php', function (liveLineStatus) {
+			var output = {};
 			console.log(liveLineStatus);
 			$(liveLineStatus).find('LineStatus').each(function () {
 				
 				$line = $(this);
 				var name = $($line.children('Line')[0]).attr('Name');
+				var cssName = name.split(" ")[0].toLowerCase();
 				var status = $($line.children('Status')[0]).attr('Description');
-				/*var name = $line.attr('Name')*/
-				console.log(name, status);
+				var details = 'No further details';
+				//console.log(name, status, details);
+				output[cssName] = {status:status, details:details};
 			});
+			//console.log(output);
+			myApp.updateLineStatus(output);
+			var output = Mustache.render(myApp.template,window.lineStatus);
+			document.getElementById('line-status-container').innerHTML = output;
 		});
 	},
+	updateLineStatus: function (data) {
+		console.log(window.lineStatus);
+		var lineStatus = window.lineStatus['lines'];
+		var i = lineStatus.length-1;
+		if (i > -1) {
+			do {
+				try {
+				var cssClass = lineStatus[i]['class'];
+				lineStatus[i]['status'] = data[cssClass]['status'];
+				lineStatus[i]['details'] = data[cssClass]['details'];
+				}
+				catch (e) {
+					console.log(lineStatus[i]['class']);
+				}
+			} while (--i >= 0);
+		}
+	}
 	
 };
 myApp.init(lineStatus, 'line-status-template', 'line-status-container');
